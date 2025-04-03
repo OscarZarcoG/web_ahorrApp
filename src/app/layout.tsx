@@ -9,9 +9,9 @@ export default function RootLayout({
   return (
     <html lang="es">
       <body>
-        <ThemeProvider>
-          {children}
-        </ThemeProvider>
+          <ThemeProvider>
+            {children}
+          </ThemeProvider>
       </body>
     </html>
   );

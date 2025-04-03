@@ -1,7 +1,10 @@
 'use client'
 import { useRouter } from 'next/navigation'
+import Image from 'next/image'
 import { useEffect } from 'react'
 import { ThemeToggle } from "@/components/buttons/theme/ThemeToggle";
+import admin from '@/../public/admin.png';
+import dashboard from '@/../public/dashboard.png';
 
 
 export default function AdminSelectionPage() {
@@ -35,16 +38,16 @@ export default function AdminSelectionPage() {
             className="p-4 border rounded-lg hover:bg-gray-50 cursor-pointer dark:hover:bg-gray-700" 
             onClick={() => handleSelection(true)}
           >
-            <h2 className="font-semibold">Sistema de Administración Django</h2>
-            <p className="text-gray-600">Acceso completo al backend</p>
+            <h2 className="font-semibold text-center mb-2">Panel de Administración</h2>
+            <Image src={admin} alt="" />
           </div>
           
           <div 
             className="p-4 border rounded-lg hover:bg-gray-50 cursor-pointer dark:hover:bg-gray-700"
             onClick={() => handleSelection(false)}
           >
-            <h2 className="font-semibold">Dashboard de Usuario</h2>
-            <p className="text-gray-600">Ir al panel principal</p>
+            <h2 className="font-semibold text-center mb-2">Dashboard de Usuario</h2>
+            <Image src={dashboard} alt="" />
           </div>
         </div>
       </div>

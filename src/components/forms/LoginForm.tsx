@@ -13,7 +13,7 @@ export const LoginForm = () => {
   
   const [showPassword, setShowPassword] = useState(false);
   const [emptyFields, setEmptyFields] = useState(false);
-  const { loading, error, login, navigateTo } = useAuth(); // Eliminamos success de aquí
+  const { loading, error, login, navigateTo } = useAuth(); 
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
@@ -36,7 +36,6 @@ export const LoginForm = () => {
     }
     
     await login(formData);
-    // La redirección ahora se maneja dentro del hook login
   };
 
   const togglePasswordVisibility = () => {

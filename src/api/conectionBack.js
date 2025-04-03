@@ -7,6 +7,7 @@ const api = axios.create({
     },
     withCredentials: false 
 });
+//"http://192.168.1.74:8000/"
 
 api.interceptors.request.use(
     (config) => {

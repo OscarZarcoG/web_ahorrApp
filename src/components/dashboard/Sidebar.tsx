@@ -14,7 +14,7 @@ export const Sidebar = ({ isOpen, onClose, onLogout }: SidebarProps) => {
   const navItems = [
     { href: '/dashboard', icon: '🏠', label: 'Inicio' },
     { href: '/dashboard/profile', icon: '👤', label: 'Perfil' },
-    { href: '/dashboard/settings', icon: '⚙️', label: 'Configuración' },
+    { href: '/settings', icon: '⚙️', label: 'Configuración' },
   ]
 
   return (
