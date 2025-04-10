@@ -13,7 +13,7 @@ export const Sidebar = ({ isOpen, onClose, onLogout }: SidebarProps) => {
 
   const navItems = [
     { href: '/dashboard', icon: '🏠', label: 'Inicio' },
-    { href: '/dashboard/profile', icon: '👤', label: 'Perfil' },
+    { href: '/transactions', icon: '💸', label: 'Transacciones' },
     { href: '/settings', icon: '⚙️', label: 'Configuración' },
   ]
 
@@ -29,7 +29,7 @@ export const Sidebar = ({ isOpen, onClose, onLogout }: SidebarProps) => {
       <aside className={`fixed inset-y-0 left-0 transform ${isOpen ? 'translate-x-0' : '-translate-x-full'} md:relative md:translate-x-0 w-64 bg-white dark:bg-gray-800 shadow-md z-30 transition-transform duration-300 ease-in-out`}>
         <div className="flex flex-col h-full">
           <div className="p-4 border-b border-gray-200 dark:border-gray-700">
-            <h2 className="text-xl font-semibold text-gray-800 dark:text-white">Mi Dashboard</h2>
+            <h2 className="text-xl font-semibold text-gray-800 dark:text-white">AhorrApp</h2>
           </div>
 
           <nav className="flex-1 overflow-y-auto">

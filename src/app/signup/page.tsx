@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import { ThemeToggle } from "@/components/buttons/theme/ThemeToggle";
+import { ThemeToggle } from "@/components/buttons/ThemeToggle";
 import { SignupForm } from "@/components/forms/SignupForm";
 
 export default function SignupPage() {

@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import { FormInput } from "./FormInput";
 import { Alert } from "../alerts/Alert";
-import { SubmitButton } from "@/components/buttons/forms/SubmitButton";
+import { SubmitButton } from "@/components/forms/SubmitButton";
 import { useAuth } from "@/hook/useAuth";
 
 export const LoginForm = () => {

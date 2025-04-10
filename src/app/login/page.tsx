@@ -1,6 +1,6 @@
 'use client'
 import React from "react";
-import { ThemeToggle } from "@/components/buttons/theme/ThemeToggle";
+import { ThemeToggle } from "@/components/buttons/ThemeToggle";
 import { LoginForm } from "@/components/forms/LoginForm";
 
 export default function LoginPage() {
@@ -11,7 +11,6 @@ export default function LoginPage() {
           <h1 className="flex-1 text-2xl font-bold text-center text-gray-900 dark:text-white uppercase">Iniciar Sesión</h1>
           <ThemeToggle/>
         </div>
-        
         <LoginForm />
       </div>
     </div>

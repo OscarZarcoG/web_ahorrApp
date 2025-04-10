@@ -1,23 +1,18 @@
 'use client'
 import { useState } from 'react'
-import { useTheme } from 'next-themes'
-import { Switch } from '@/components/ui/switch'
-import { Label } from '@/components/ui/label'
-import { Button } from '@/components/ui/button'
-import { Separator } from '@/components/ui/separator'
-import { Avatar, AvatarImage } from '@/components/ui/avatar'
+import { Switch } from '@/components/settings/ui/switch'
+import { Label } from '@/components/settings/ui/label'
+import { Button } from '@/components/settings/ui/button'
+import { Separator } from '@/components/settings/ui/separator'
+import {useTheme} from '@/context/ThemeContext'
 
-export const Settings = () => {
-  const { theme, setTheme } = useTheme()
+interface SettingsProps {
+  onLogout: () => void
+}
+
+export const Settings = ({ onLogout }: SettingsProps)=> {
   const [notificationsEnabled, setNotificationsEnabled] = useState(true)
-  const [analyticsEnabled, setAnalyticsEnabled] = useState(false)
-  const [selectedLanguage, setSelectedLanguage] = useState('es')
-
-  const languages = [
-    { code: 'es', name: 'Español' },
-    { code: 'en', name: 'English' },
-    { code: 'pt', name: 'Português' }
-  ]
+  const { theme, toggleTheme } = useTheme()
 
   return (
     <div className="max-w-4xl mx-auto p-6 space-y-8">
@@ -28,7 +23,8 @@ export const Settings = () => {
         </p>
       </div>
 
-      <Separator />
+{/* 
+      import { Avatar, AvatarImage } from '@/components/settings/ui/avatar'
 
       <div className="space-y-4">
         <h2 className="text-xl font-semibold">Perfil</h2>
@@ -43,7 +39,7 @@ export const Settings = () => {
             </Button>
           </div>
         </div>
-      </div>
+      </div> */}
 
       <Separator />
 
@@ -60,7 +56,7 @@ export const Settings = () => {
           <Switch
             id="theme-mode"
             checked={theme === 'dark'}
-            onCheckedChange={(checked) => setTheme(checked ? 'dark' : 'light')}
+            onCheckedChange={() => toggleTheme()} 
           />
         </div>
 
@@ -78,37 +74,7 @@ export const Settings = () => {
           />
         </div>
 
-        <div className="flex items-center justify-between">
-          <div className="space-y-1">
-            <Label htmlFor="analytics">Compartir datos analíticos</Label>
-            <p className="text-sm text-gray-500 dark:text-gray-400">
-              Ayúdanos a mejorar la plataforma
-            </p>
-          </div>
-          <Switch
-            id="analytics"
-            checked={analyticsEnabled}
-            onCheckedChange={setAnalyticsEnabled}
-          />
-        </div>
-
-        <div className="space-y-2">
-          <Label htmlFor="language">Idioma</Label>
-          <select
-            id="language"
-            value={selectedLanguage}
-            onChange={(e) => setSelectedLanguage(e.target.value)}
-            className="w-full p-2 border rounded-md bg-white dark:bg-gray-800"
-          >
-            {languages.map((lang) => (
-              <option key={lang.code} value={lang.code}>
-                {lang.name}
-              </option>
-            ))}
-          </select>
-        </div>
       </div>
-
       <Separator />
 
       <div className="space-y-4">
@@ -117,7 +83,7 @@ export const Settings = () => {
           <Button variant="outline" className="w-full">
             Cambiar contraseña
           </Button>
-          <Button variant="destructive" className="w-full">
+          <Button variant="destructive" className="w-full" onClick={onLogout}>
             Cerrar sesión
           </Button>
         </div>

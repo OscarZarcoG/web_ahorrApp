@@ -2,7 +2,7 @@
 import { useRouter } from 'next/navigation'
 import Image from 'next/image'
 import { useEffect } from 'react'
-import { ThemeToggle } from "@/components/buttons/theme/ThemeToggle";
+import { ThemeToggle } from "@/components/buttons/ThemeToggle";
 import admin from '@/../public/admin.png';
 import dashboard from '@/../public/dashboard.png';
 
